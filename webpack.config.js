@@ -1,8 +1,9 @@
 var webpack = require('webpack');  
 module.exports = {  
     entry: [
+      'babel-polyfill',
       'webpack/hot/only-dev-server',
-      "./src/app.js"
+      './src/app.js'
     ],
     output: {
         path: __dirname + '/build',
@@ -10,15 +11,20 @@ module.exports = {
     },
     module: {
         loaders: [
+            // { 
+            //   test: /\.js?$/, 
+            //   loaders: ['react-hot', 'babel'],
+            //   exclude: /node_modules/
+            // },
             { 
-              test: /\.js?$/, 
-              loaders: ['react-hot', 'babel'],
-              exclude: /node_modules/
-              // query: {
-              //   presets: ['react']
-              // }
+              test: /\.js$/, 
+              exclude: /node_modules/, 
+              loader: 'babel-loader',
+              query: {
+                plugins: ['transform-runtime'],
+                presets:['es2015', 'react', 'stage-0']
+              }
             },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
             { test: /\.css$/, loader: "style!css" }
         ]
     },
