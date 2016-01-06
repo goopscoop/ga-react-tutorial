@@ -9,6 +9,7 @@ class List extends React.Component {
   }
 
   render(){
+    console.log(this.props)
     return (
       <div className="col-md-2">
         <h2>{this.props.title}</h2>

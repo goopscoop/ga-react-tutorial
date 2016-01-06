@@ -10,13 +10,16 @@ class ToDoFlux extends Flux {
   constructor(){
     super();
     this.createActions('toDoApp', ToDoActions);
-    this.createStore('toDoApp', ToDoStore);
+    this.createStore('toDoApp', ToDoStore, this);
   }
 }
+
+const flux = new ToDoFlux();
 
 class ToDo extends React.Component {
 
   componentWillMount(){
+    flux.getActions('toDoApp').test()
     this.setState({
       list: ['thing1', 'thing2', 'thing3']
     })
