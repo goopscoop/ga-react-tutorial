@@ -7,7 +7,20 @@ class ToDoActions extends Actions {
 
   test() {
     return {
-      thing: 'thing'
+      thing: 'thing',
+      otherthing: '2'
+    }
+  }
+
+  addItemToList(item){
+    return {
+      item
+    }
+  }
+
+  toggleComplete(i){
+    return {
+      i
     }
   }
 }

@@ -2,7 +2,7 @@ var webpack = require('webpack');
 module.exports = {  
     entry: [
       'babel-polyfill',
-      'webpack/hot/only-dev-server',
+      // 'webpack/hot/only-dev-server',
       './src/app.js'
     ],
     output: {
@@ -21,15 +21,11 @@ module.exports = {
               exclude: /node_modules/, 
               loader: 'babel-loader',
               query: {
-                plugins: ['transform-runtime'],
                 presets:['es2015', 'react', 'stage-0']
               }
             },
             { test: /\.css$/, loader: "style!css" }
         ]
-    },
-    plugins: [
-      new webpack.NoErrorsPlugin()
-    ]
+    }
 };
 

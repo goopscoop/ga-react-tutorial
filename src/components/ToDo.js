@@ -19,10 +19,6 @@ const flux = new ToDoFlux();
 class ToDo extends React.Component {
 
   componentWillMount(){
-    flux.getActions('toDoApp').test()
-    this.setState({
-      list: ['thing1', 'thing2', 'thing3']
-    })
   }
 
   addOne = ()=> {
@@ -37,7 +33,9 @@ class ToDo extends React.Component {
         <div className="col-md-6 col-md-offset-3">
           <div className="panel panel-default">
             <div className="panel-body">
-              <List title="List1" list={this.state.list} />
+              <FluxComponent flux={flux} connectToStores={['toDoApp']}>
+                <List title="List1" />
+              </FluxComponent>
             </div>
           </div>
         </div>
