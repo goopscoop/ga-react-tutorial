@@ -27,9 +27,11 @@ If you've already installed node, you can skip this step.
 - If you feel adventurous, go ahead and poke around the files. Most of what you'll find is general boilerplate that will make your dev experiance nicer.
 
 # Continued Ed Links
+*Anything labled advanced will likely not be covered in the intro to react class, or will be touched on but not dived into. Don't let that stop you from exploring further!*
 
 ## React
 - https://facebook.github.io/react/docs/thinking-in-react.html
+- https://egghead.io/technologies/react
 
 ## Virtual DOM
 - http://calendar.perfplanet.com/2013/diff/
@@ -38,13 +40,48 @@ If you've already installed node, you can skip this step.
 - https://github.com/Matt-Esch/virtual-dom
 
 ## JSX
+
+JSX is the HTML looking code that you'll find within the render method (and sprinkled throughout other custom methods) in React. While it looks like HTML, it's actually just JavaScript.
+
 - https://facebook.github.io/react/docs/jsx-in-depth.html
 - https://facebook.github.io/react/jsx-compiler.html
 - http://babeljs.io/docs/usage/transformers/other/react/
 
-## Flux
-- https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.wz28eywrv
+## Flux (old) and Redux (new) - (Advanced Data Handling)
+
+###Flux
+
+Flux is a data handling methodology created by Facebook for React. One of the best implementations of Flux come in the form of Flummox. However, the React community is starting to move away from Flux towards a new data handling methodology called Redux.
+
+Learn more about Flux:
+- https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6#.ewluyug9y
 - http://acdlite.github.io/flummox
 
+### Redux
+
+Many Flux implementations are slowing be abandoned for the new Redux methodology. In fact, the creator of Flummox has joined the Redux team. This is new tech and not as widely documented as Flux, so it has a steeper learning curve, however it appears to be the way data handling is headed for React (as well as many other frameworks)
+
+Learn more about Redux
+- https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.wz28eywrv
+- https://github.com/rackt/redux
+- https://egghead.io/series/getting-started-with-redux
+- https://www.youtube.com/watch?v=xsSnOQynTHs
+
 ## ES6 (ES2015)
+
+ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a lot of handy new features. Some of my favorite include new variable types (`let` and `const`), arrow functions `() => {}`, spread opperators `{...props}`, destructuring `cosnt {thing1, thing2, thing3} = object`, and a bunch of other useful features. Well worth looking into.
+
 - http://babeljs.io/docs/learn-es2015/
+- https://babeljs.io/ - transpiler
+
+## React Router (Advanced)
+
+React Router is a package used by most React Single Page Apps. It's easy to use and written in JSX syntax.
+
+- https://github.com/rackt/react-router
+
+## Webpack (Advanced)
+
+Webpack is a very complicated but useful bundler. It allows for things like hot reloading, `import`, `export`, etc. Webpack is set up by a single `webpack.config.js` file/
+
+- https://webpack.github.io/
