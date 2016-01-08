@@ -43,6 +43,18 @@ If you've already installed node, you can skip this step.
 
 JSX is the HTML looking code that you'll find within the render method (and sprinkled throughout other custom methods) in React. While it looks like HTML, it's actually just JavaScript.
 
+*Example*
+
+```
+// JSX
+<h1 className="heading">Hello, world! I am an H1.</h1>
+
+// Compiles to this
+React.createElement('h1', {className: "heading"},
+    "Hello, world! I am an H1."
+)
+```
+
 - https://facebook.github.io/react/docs/jsx-in-depth.html
 - https://facebook.github.io/react/jsx-compiler.html
 - http://babeljs.io/docs/usage/transformers/other/react/
