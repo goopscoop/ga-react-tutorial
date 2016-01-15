@@ -71,7 +71,7 @@ Learn more about Flux:
 
 ### Redux
 
-Many Flux implementations are slowing be abandoned for the new Redux methodology. In fact, the creator of Flummox has joined the Redux team. This is new tech and not as widely documented as Flux, so it has a steeper learning curve, however it appears to be the way data handling is headed for React (as well as many other frameworks)
+Many Flux implementations are slowly being abandoned for the new Redux methodology. In fact, the creator of Flummox has joined the Redux team. This is new tech and not as widely documented as Flux, so it has a steeper learning curve. However, it appears to be the way data handling is headed for React (as well as many other frameworks).
 
 Learn more about Redux
 - https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.wz28eywrv
@@ -81,7 +81,7 @@ Learn more about Redux
 
 ## ES6 (ES2015)
 
-ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a lot of handy new features. Some of my favorite include new variable types (`let` and `const`), arrow functions `() => {}`, spread opperators `{...props}`, destructuring `cosnt {thing1, thing2, thing3} = object`, and a bunch of other useful features. Well worth looking into.
+ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a lot of handy new features. Some of my favorites include new variable types (`let` and `const`), arrow functions `() => {}`, spread opperators `{...props}`, destructuring `cosnt {thing1, thing2, thing3} = object`, and a bunch of other useful features. Well worth looking into.
 
 - http://babeljs.io/docs/learn-es2015/
 - https://babeljs.io/ - transpiler
