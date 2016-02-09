@@ -4,7 +4,7 @@
   "description": "# Setup (Before Class)",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors",
+    "start": "webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors"
   },
   "repository": {
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.3.14",
-    "babel-runtime": "^6.3.19",
     "react": "^0.14.5",
     "react-dom": "^0.14.5"
   }
