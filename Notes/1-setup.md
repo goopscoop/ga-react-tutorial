@@ -19,7 +19,7 @@
 3. Open `package.json` and add some scripts:
   ```
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors",
+    "start": "webpack-dev-server --hot --inline --progress --colors",
     "build": "webpack --progress --colors"
   }
   ```
