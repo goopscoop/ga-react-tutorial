@@ -1,5 +1,5 @@
-var webpack = require('webpack');  
-module.exports = {  
+var webpack = require('webpack');
+module.exports = {
     entry: [
       'babel-polyfill',
       'webpack/hot/only-dev-server',
@@ -11,9 +11,9 @@ module.exports = {
     },
     module: {
         loaders: [
-            { 
-              test: /\.js$/, 
-              exclude: /node_modules/, 
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
               loader: 'babel-loader',
               query: {
                 plugins: ['transform-runtime'],
@@ -22,8 +22,5 @@ module.exports = {
             },
             { test: /\.css$/, loader: "style!css" }
         ]
-    },
-    plugins: [
-      new webpack.NoErrorsPlugin()
-    ]
+    }
 };
