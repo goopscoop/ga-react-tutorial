@@ -106,7 +106,7 @@ const list = props.listItems.map((el, i)=>(
   // which is an array, and we're running the .map method
   // which returns a new array of list items. The key attribute is
   // required, and must be unique.
-  <li key={i}><h2>el</h2></li>
+  <li key={i}><h2>{el}</h2></li>
 ));
 ```
 
@@ -118,7 +118,7 @@ import React from 'react';
 const List = (props) => {
 
   const list = props.listItems.map((el, i)=>(
-    <li key={i}><h2>el</h2></li>
+    <li key={i}><h2>{el}</h2></li>
   ));
 
   return (
