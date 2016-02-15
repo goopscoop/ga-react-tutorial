@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Input = ({ onChange, onSubmit }) => (
-  <div className="form-group">
-    <label htmlFor="listInput">Email address</label>
+const Input = ({ onChange, onSubmit, value }) => (
+  <form
+    onSubmit={onSubmit}>
+  <div
+    className="form-group">
+    <label
+      htmlFor="listInput">
+      Email address
+    </label>
     <input
+      value={value}
       onChange={onChange}
       type="text"
       className="form-control"
@@ -11,11 +18,11 @@ const Input = ({ onChange, onSubmit }) => (
       placeholder="Add new todo"
     />
     <button
-      className="btn btn-primary"
-      onSubmit={onSubmit}>
+      className="btn btn-primary">
       Add Item
     </button>
   </div>
+  </form>
 )
 
 export default Input;
