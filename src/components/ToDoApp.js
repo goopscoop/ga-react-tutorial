@@ -11,12 +11,12 @@ class ToDoApp extends React.Component {
     })
   };
 
-  onInputChange = (e) => {
-    this.setState({ newToDo: e.target.value});
+  onInputChange = (event) => {
+    this.setState({ newToDo: event.target.value});
   };
 
-  onInputSubmit = (e) => {
-    e.preventDefault();
+  onInputSubmit = (event) => {
+    event.preventDefault();
     this.setState((previousState)=>({
       list: [...previousState.list, {item: previousState.newToDo, done: false }],
       newToDo: ''
@@ -34,7 +34,6 @@ class ToDoApp extends React.Component {
   };
 
   deleteListItem = (i) => {
-    console.log(i)
     this.setState((previousState)=>({
       list: [
         ...previousState.list.slice(0, i),
