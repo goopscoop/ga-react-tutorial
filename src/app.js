@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToDoApp from './components/ToDoApp';
+import { Provider } from 'react-redux';
+import ToDoAppContainer from './containers/ToDoAppContainer';
+import configureStore from './redux/configureStore';
+
+const store = configureStore();
 
 class App extends React.Component {
   render(){
     return(
-      <div>
-        <ToDoApp />
-      </div>
+      <Provider store={store}>
+        <ToDoAppContainer />
+      </Provider>
     );
   }
 }
