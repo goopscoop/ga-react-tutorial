@@ -12,15 +12,12 @@ class ToDoApp extends React.Component {
   };
 
   onInputChange = (event) => {
-    this.setState({ newToDo: event.target.value});
+    this.props.inputChange(event.target.value);
   };
 
   onInputSubmit = (event) => {
     event.preventDefault();
-    this.setState((previousState)=>({
-      list: [...previousState.list, {item: previousState.newToDo, done: false }],
-      newToDo: ''
-    }));
+    this.props.inputSubmit();
   };
 
   onListItemClick = (i) => {
@@ -43,6 +40,7 @@ class ToDoApp extends React.Component {
   };
 
   render(){
+    console.log(this.props)
     return (
       <div className="row">
         <div className="col-md-8 col-md-offset-2">
@@ -52,11 +50,11 @@ class ToDoApp extends React.Component {
               <hr/>
               <List
                 onClick={this.onListItemClick}
-                listItems={this.state.list}
+                listItems={this.props.toDoApp.list}
                 deleteListItem={this.deleteListItem}
               />
               <Input
-                value={this.state.newToDo}
+                value={this.props.toDoApp.newToDo}
                 onChange={this.onInputChange}
                 onSubmit={this.onInputSubmit}
               />
