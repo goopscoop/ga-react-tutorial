@@ -6,7 +6,7 @@ To learn more about Redux, look at the readme at the root of this project where 
 
 Ok, let's get started.
 
-1. First we'll need to install some new packages.
+## 1. First we'll need to install some new packages.
 
 First, let's install `redux` and `react-redux` (which has some bindings for pairing redux with react).
 
@@ -23,7 +23,9 @@ npm install --save redux-logger
 
 When you begin working on your own apps, you might find other middleware useful as well, including `redux-thunk` and `redux-promise`, but for the sake of this project, we're going to be sticking to the logger middleware only.
 
-2. Now we need to setup our app to handle Redux. There's a little boilerplating involved that you just need to do every time you fit an app with redux, so we're going to keep it simple this time.
+## 2. Setup
+
+Now we need to setup our app to handle Redux. There's a little boilerplating involved that you just need to do every time you fit an app with redux, so we're going to keep it simple this time.
 
 The first thing we need to do is configure our redux store. Create a new file in the within `/src/` called `redux`. Within this folder, create a new file called `configureStore.js`.
 
@@ -51,7 +53,9 @@ const createStoreWithMiddleware = applyMiddleware( loggerMiddleware)(createStore
 
 We're not done here, but we'll need to create another file before we can progress.
 
-3. Within `src/redux/` create another folder called `modules`. Within here we'll store all our reducers, action creators, and constants needed to make redux work. We're going to be using an orginizational structure called ducks where we store related constants, reducers, and action creators in a single file, rather than having multiple files for each. I find this makes our code much easier to work with, though there are conflicting points of view here.
+## 3. Modules
+
+Within `src/redux/` create another folder called `modules`. Within here we'll store all our reducers, action creators, and constants needed to make redux work. We're going to be using an orginizational structure called ducks where we store related constants, reducers, and action creators in a single file, rather than having multiple files for each. I find this makes our code much easier to work with, though there are conflicting points of view here.
 
 Within the `modules` folder, create 'toDoApp.js'. I like to name my ducks files after the parent component they are most closely associated with. Notice that the filename begins with a lowercase.
 
@@ -68,7 +72,9 @@ export default function reducer(state = initialState, action){ // a function tha
 }
 ```
 
-4. Now that we have our first reducer, it's time to add it to our `configureStore.js` file. Go back to that file and add this import statement `import toDoApp from './modules/toDoApp';`
+## 4. Configure Store
+
+Now that we have our first reducer, it's time to add it to our `configureStore.js` file. Go back to that file and add this import statement `import toDoApp from './modules/toDoApp';`
 
 Now we're going to use the combineReducers function to combine our current reducer with any future reducers that may come along as our app grows. At the bottom of the file, add:
 
@@ -87,7 +93,9 @@ export default configureStore;
 
 Cool. We're done here.
 
-5. Now that we have a reducer, we need a way to give our app access to it. This will take two more steps, and then we can get to the good stuff.
+## 5. Connect
+
+Now that we have a reducer, we need a way to give our app access to it. This will take two more steps, and then we can get to the good stuff.
 
 We've talked before about class components and functional components. These are sometimes also known as smart components and dumb components. We'll we're going to add one more kind of component into the mix called a container. This is simply a wrapper for a React component that give the component it wraps access to actions (the functions that make a Redux app work), and state.
 
@@ -125,9 +133,11 @@ export default connect(
 )(ToDoApp);
 ```
 
-6. We're nearly done with setting up Redux. For the final step in getting all of this revved, we need to go back to the `app.js` file.
+6. Provider
 
-First, we need to import a few things. We no longer need out `ToDoApp` component, because that is now going to be replaced by our `ToDoAppContainer`. We also need to import our `configureStore` function, as well as a final helper Component from `react-redux` called `Provider`. So add these to the top of the `app.js` file:
+We're nearly done with setting up Redux. For the final step in getting all of this revved, we need to go back to the `app.js` file.
+
+First, we need to import a few things. We no longer need our `ToDoApp` component, because that is now going to be replaced by our `ToDoAppContainer`. We also need to import our `configureStore` function, as well as a final helper Component from `react-redux` called `Provider`. So add these to the top of the `app.js` file:
 
 ```javascript
 import { Provider } from 'react-redux';

@@ -4,13 +4,6 @@ import Input from './Input';
 
 class ToDoApp extends React.Component {
 
-  componentWillMount(){
-    this.setState({
-      list: [],
-      newToDo: ''
-    })
-  };
-
   onInputChange = (event) => {
     this.props.inputChange(event.target.value);
   };
@@ -21,22 +14,11 @@ class ToDoApp extends React.Component {
   };
 
   onListItemClick = (i) => {
-    this.setState((previousState)=>({
-      list: [
-        ...previousState.list.slice(0, i),
-        Object.assign({}, previousState.list[i], {done: !previousState.list[i].done}),
-        ...previousState.list.slice(i+1)
-      ]
-    }))
+    this.props.listItemClick(i)
   };
 
   deleteListItem = (i) => {
-    this.setState((previousState)=>({
-      list: [
-        ...previousState.list.slice(0, i),
-        ...previousState.list.slice(i+1)
-      ]
-    }))
+    this.props.deleteListItem(i)
   };
 
   render(){

@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import ToDoApp from '../components/ToDoApp.js'
 import {
-  onInputChange,
-  inputSubmit
+  inputChange,
+  inputSubmit,
+  deleteListItem,
+  listItemClick
 } from '../redux/modules/toDoApp';
 
 function mapStateToProps(state) {
@@ -13,8 +15,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    inputChange: (value) => dispatch(onInputChange(value)),
-    inputSubmit: () => dispatch(inputSubmit())
+    inputChange: (value) => dispatch(inputChange(value)),
+    inputSubmit: () => dispatch(inputSubmit()),
+    deleteListItem: (i) => dispatch(deleteListItem(i)),
+    listItemClick: (i) => dispatch(listItemClick(i))
   }; // here we're mapping actions to props
 }
 

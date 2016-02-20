@@ -1,6 +1,8 @@
 Now that we have something showing up in our view, it's time to add some functionality to our app. Because this is a to do app, we'll need to add a way for new items to be added to the list, a way to make off items as completed, and a way to delete any items we no longer want.
 
-1. First we need to add an input element so the user can add a todo item. Let's do this by creating a new component. In the `components` folder, create `Input.js`, and within create and export a functional component called Input.
+## 1. Functional Component
+
+First we need to add an input element so the user can add a todo item. Let's do this by creating a new component. In the `components` folder, create `Input.js`, and within create and export a functional component called Input.
 
 Remember that functional components return JSX and have access to the props argument. For now, we just need to return the form. Paste the following JSX into the return statement of your functional component:
 
@@ -26,13 +28,17 @@ Remember that functional components return JSX and have access to the props argu
 </form>
 ```
 
-2. Right now our JSX isn't doing anything special, just adding basic HTML to the view. Let's test it out to make sure everything is hunky dorey by importing the `Input` component into `ToDoApp.js` and instanciating it below the `List` component. It should look like this `<Input/>`.
+## 2. Input
+
+Right now our JSX isn't doing anything special, just adding basic HTML to the view. Let's test it out to make sure everything is hunky dorey by importing the `Input` component into `ToDoApp.js` and instanciating it below the `List` component. It should look like this `<Input/>`.
 
 Now's the time when I'll start keeping some of my instructions that we've already covered in past sections a little more vague. If you ever find yourself unable to figure things out, remember that you can reference the source code in this repo at any time.
 
 Ok, let's check the view. Everything there? Good! Let's make it do stuff.
 
-3. The first thing we need to do is give ourselves access to the value of the input field. This value will need to be accessed in other components, so we don't want to handle the data storage within our `Input` component. In fact, I'll just reiterate that it's never a good idea to store data in a child component whenever possible. Most of the time, data should be stored at the top of your app and trickle down components through props.
+## 3. Props
+
+The first thing we need to do is give ourselves access to the value of the input field. This value will need to be accessed in other components, so we don't want to handle the data storage within our `Input` component. In fact, I'll just reiterate that it's never a good idea to store data in a child component whenever possible. Most of the time, data should be stored at the top of your app and trickle down components through props.
 
 Another thing to remember is that even though we are currently storing state in our `ToDoApp` component, eventually we'll be adding Redux to handle data for our entire app. We are simply working with local State to display the many things you can do in a React component.
 
@@ -47,9 +53,11 @@ Ok, now that we've got that out of the way, we're going to store the value of th
   };
 ```
 
-4. Now we need to pass that value through props. Find the `<Input/>` and add a new prop called value. Can you remember how to access a value from state? Pass it in. Look to the `listItems` prop on the `List` component for a hint.
+Now we need to pass that value through props. Find the `<Input/>` and add a new prop called value. Can you remember how to access a value from state? Pass it in. Look to the `listItems` prop on the `List` component for a hint.
 
-5. In `Inpun.js` we now have access to the value prop, but we're going to be handling props in a slightly different way this time around. In this case we'll be adding a new ES6 feature called "destructuring" to make dealing with props just a little nicer.
+## 4. Destructuring
+
+In `Input.js` we now have access to the value prop, but we're going to be handling props in a slightly different way this time around. In this case we'll be adding a new ES6 feature called "destructuring" to make dealing with props just a little nicer.
 
 Instead of adding the `props` argument to the `Input` component, we're going to add this `({ value })`. What this does is take the `props` argument, and breaks it down into variables we can have access to based on the key value pairs within the props object.
 
@@ -88,7 +96,9 @@ log(props);
 
 So let's give our input access to the value. In the `input` within our JSX, add `value={value}`. Check the browser to confirm that this is indeed the value.
 
-6. You might have noticed that now that we've declared the value, we can't change it. That's because the value is being held in state and we haven't created a method to update state with our new value based on user input.
+## 5. setState
+
+You might have noticed that now that we've declared the value, we can't change it. That's because the value is being held in state and we haven't created a method to update state with our new value based on user input.
 
 To do this, we'll need to add an `onChange` method to the same `input` we added value. Under value add 'onChange={onChange}', then where we destructure the props, add `onChange` so it looks like `({ onChange, value })`
 
@@ -104,7 +114,9 @@ onInputChange = (event) => {
 
 Now, we just need to give our custom `Input` component access to this method through props. Within the JSX, add `onChange={this.onInputChange}`. That's everything we need to make the input editable, as well as give our app access to it's value at any time.
 
-7. Now time to add new items to our list. To do this, we're going to create another custom method within `ToDoApp` called `onInputSubmit`. This also contains an `event` arugment. Within the body of the method, we're going to `event.preventDefault()`, then use the `setState` method to push a new item to the list array. However, it's important to note that state should never be modified directly, otherwise React may not render the change, or state may be overridden unexpectedly.
+## 6. Adding items
+
+Now time to add new items to our list. To do this, we're going to create another custom method within `ToDoApp` called `onInputSubmit`. This also contains an `event` arugment. Within the body of the method, we're going to `event.preventDefault()`, then use the `setState` method to push a new item to the list array. However, it's important to note that state should never be modified directly, otherwise React may not render the change, or state may be overridden unexpectedly.
 
 To get around this, `this.setState` also can take a callback function with access to `previousState`. To take advantage of this, we could write this (but don't):
 
@@ -135,7 +147,9 @@ this.setState((previousState)=>({
 
 Now that the method is done, see if you can pass it to the `Input` component, and add it to the `onSubmit` method on the `form` tag within the JSX. If you can't figure it out, take a look at the source code.
 
-8. It's time to add the ability to cross off list items. To do this, we'll need to change the way we store our listItems. Instead of storing an array of strings, we'll store an array of objects with an `item` key which will hold a string of the item name, and a `done` boolean.
+## 7. Cross off items
+
+It's time to add the ability to cross off list items. To do this, we'll need to change the way we store our listItems. Instead of storing an array of strings, we'll store an array of objects with an `item` key which will hold a string of the item name, and a `done` boolean.
 
 Now that we've made this discovery, it's time to update our data accordingly. For now, go to the `componentWillMount` method, and remove the strings from the list key. They've served their purpose, we can work without them from now on. It should look like: `list: []`. Then go to `onInputSubmit` and change the `setState` method to account for the new change in data structure. It'll look like this:
 
@@ -186,7 +200,9 @@ Next, we're going to give this `span` some style. Within a `style` attribute, we
 
 Now, when we click on the element, it'll be crossed out. Cool! Try adding some items and crossing them out in your browser.
 
-9. Finally, we need to be able to delete list items. This will be a very similar action to crossing list items off. In fact, it'll be nearly identical once we've added a delete button. Try figuring it out, and if you can't, come back and follow along.
+## 8. Delete Items
+
+Finally, we need to be able to delete list items. This will be a very similar action to crossing list items off. In fact, it'll be nearly identical once we've added a delete button. Try figuring it out, and if you can't, come back and follow along.
 
 First we need a delete button. Add it after the list item like so:
 

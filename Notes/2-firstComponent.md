@@ -2,7 +2,9 @@
 
 Now that we have our app boilerplate out of the way, it's time to get to the fun stuff. Let's set up our first component.
 
-1. The first thing we need to do is create out `index.html` page in the root of our project. This will be a very basic page. For this project, I've linked to a bootstrap cdn for basic styling. The only other things to look out for is the `<div id="app"></div>` tag (this is where our app will be injected), and the `<script src="bundle.js"></script>` tag (which will run the javascript that powers our app).
+## 1. index.html
+
+The first thing we need to do is create out `index.html` page in the root of our project. This will be a very basic page. For this project, I've linked to a bootstrap cdn for basic styling. The only other things to look out for is the `<div id="app"></div>` tag (this is where our app will be injected), and the `<script src="bundle.js"></script>` tag (which will run the javascript that powers our app).
 
 Here's the full HTML:
 
@@ -20,14 +22,23 @@ Here's the full HTML:
 </body>
 </html>
 ```
-2. Create a new folder called `src`. The majority of your app's code will live inside this folder from now on.
-3. Within `src` create a `app.js` file. Within every React app there is one root component, and for us, this is it. All other components will be nested within this one.
-4. First we need to import react into this file. To do this, we'll be using a little ES6. `import React from 'react';` The `import` functionality is an ES6 feature, but currently it's powered by Webpack (as opposed to the browser where it may be powered in the near future).
-5. We also need to import ReactDOM. Because react is used not only to power web apps (with ReactDOM), but also native mobile apps (with React Native), the rendering process is handled by ReactDOM. This is where the vertual DOM is created and diff'd against the actual DOM.
+## 2. Folders & Files
+
+Create a new folder called `src`. The majority of your app's code will live inside this folder from now on.
+
+Within `src` create a `app.js` file. Within every React app there is one root component, and for us, this is it. All other components will be nested within this one.
+
+## 3. Imports
+
+First we need to import react into this file. To do this, we'll be using a little ES6. `import React from 'react';` The `import` functionality is an ES6 feature, but currently it's powered by Webpack (as opposed to the browser where it may be powered in the near future).
+
+We also need to import ReactDOM. Because react is used not only to power web apps (with ReactDOM), but also native mobile apps (with React Native), the rendering process is handled by ReactDOM. This is where the vertual DOM is created and diff'd against the actual DOM.
 
 To import ReactDOM, add `import ReactDOM from 'react-dom';` at the top of the file.
 
-6. Now we need to create our first Component. To do this we create an ES6 class that extends `React.Component`. At this point you may be wondering what is enabling all of this ES6 to work. While a lot of it is actually available in your browser right now, we are using Babel to power stage-0 and up features as well as make all ES6 backwards compatable.
+## 4. Our First Component
+
+Now we need to create our first Component. To do this we create an ES6 class that extends `React.Component`. At this point you may be wondering what is enabling all of this ES6 to work. While a lot of it is actually available in your browser right now, we are using Babel to power stage-0 and up features as well as make all ES6 backwards compatable.
 
 To create your first class:
 
@@ -45,7 +56,9 @@ class App extends React.Component {
 
 Notice that "Hello World" is nested within `div`s. All jsx must be nested within parent `div`s or it wont work.
 
-7. Finally, we need to render this component to the DOM. To do this, we'll use the `ReactDOM.render` method.
+## 5. Rendering
+
+Finally, we need to render this component to the DOM. To do this, we'll use the `ReactDOM.render` method.
 
 At the bottom of your `App.js` file, add: `ReactDOM.render(<App />, document.getElementById('app'));`
 

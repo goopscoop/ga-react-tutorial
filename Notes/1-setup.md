@@ -1,7 +1,10 @@
 # Setting up your React App - The most difficult part of any react app :)
 
-1. `npm init` to create your `package.json` file.
-2. Install dependencies:
+## 1. NPM INIT
+
+`npm init` to create your `package.json` file.
+
+## 2. Install dependencies:
   - `npm install --save react` - Install React.
   - `npm install --save react-dom` Install React Dom, the package that handles the virtual DOM.
   - `npm install --save-dev webpack` - Install Webpack, our module bundler.
@@ -16,7 +19,8 @@
     - `npm install --save-dev babel-preset-es2015` - Babel preset for all es2015 plugins.
     - `npm install --save-dev babel-preset-react` - Strip flow types and transform JSX into createElement calls.
     - `npm install --save-dev babel-preset-stage-0` - All you need to use stage 0 (and greater) plugins (experimental javascript).
-3. Open `package.json` and add some scripts:
+
+## 3. Open `package.json` and add some scripts:
   ```
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --colors",
@@ -26,7 +30,8 @@
 
   Running `npm start` will start your dev server.
   Running `npm build` will build your app for production.
-4. Setup Webpack
+
+## 4. Setup Webpack
   Webpack is our bundler. It's an important peice of our dev environment, and alows us to use some awesome features like hot reloading. Our `webpack.config.js` file is below with comments. As your app grows, your config file may change.
 
   ```javascript
@@ -58,4 +63,4 @@
   };
 
   ```
-  5. Your boiler plate is now done. Time to start writing some react code.
+Your boiler plate is now done. Time to start writing some react code.

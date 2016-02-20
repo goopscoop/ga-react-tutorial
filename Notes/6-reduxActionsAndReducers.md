@@ -287,8 +287,60 @@ export function deleteListItem(index) {
 }
 ```
 
-Now we need to adjust the reducer.
+Now we need to adjust the reducer to include these:
 
 ```javascript
-
+case LIST_ITEM_CLICK:
+  return Object.assign(
+    {},
+    state,
+    {
+      list: [
+        ...state.list.slice(0, action.index),
+        Object.assign({}, state.list[action.index], {done: !state.list[action.index].done}),
+        ...state.list.slice(action.index+1)
+      ]
+    }
+  );
+case DELETE_LIST_ITEM:
+  return Object.assign(
+    {},
+    state,
+    {
+      list: [
+        ...state.list.slice(0, action.index),
+        ...state.list.slice(action.index+1)
+      ]
+    }
+  );
 ```
+Then pass them through to `ToDoApp` using the `ToDoAppContainer`:
+
+```javascript
+function mapDispatchToProps(dispatch) {
+  return {
+    inputChange: (value) => dispatch(inputChange(value)),
+    inputSubmit: () => dispatch(inputSubmit()),
+    deleteListItem: (i) => dispatch(deleteListItem(i)),
+    listItemClick: (i) => dispatch(listItemClick(i))
+  }; // here we're mapping actions to props
+}
+```
+
+Now, adjust the logic in `ToDoApp`:
+
+```javascript
+onInputChange = (event) => {
+  this.props.inputChange(event.target.value);
+};
+
+onListItemClick = (i) => {
+  this.props.listItemClick(i)
+};
+```
+
+And finally, we can remove the `componentWillMount` method, because the state that it's setting is no longer being used.
+
+## There you have it
+
+You now should have a fully functional To Do App built with Redact, Webpack, Babel and Redux. There are still some more optimizations we can make if we wanted, still more functionality we could add. But what we have now is the first step for your next project. Keep these files with you to reference them when you need. Continue learning by starting with the suggested reading materials in the Readme. But most of all, never stop coding!
