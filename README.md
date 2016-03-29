@@ -78,6 +78,7 @@ Learn more about Redux
 - https://github.com/rackt/redux
 - https://egghead.io/series/getting-started-with-redux
 - https://www.youtube.com/watch?v=xsSnOQynTHs
+- https://github.com/erikras/ducks-modular-redux
 
 ## ES6 (ES2015)
 
