@@ -27,11 +27,11 @@ If you've already installed node, you can skip this step.
 - If you feel adventurous, go ahead and poke around the files. Most of what you'll find is general boilerplate that will make your dev experiance nicer.
 
 # Continued Ed Links
-*Anything labled advanced will likely not be covered in the intro to react class, or will be touched on but not dived into. Don't let that stop you from exploring further!*
 
 ## React
 - https://facebook.github.io/react/docs/thinking-in-react.html
 - https://egghead.io/technologies/react
+- https://github.com/reactjs/react-basic
 
 ## Virtual DOM
 - http://calendar.perfplanet.com/2013/diff/
@@ -78,6 +78,7 @@ Learn more about Redux
 - https://github.com/rackt/redux
 - https://egghead.io/series/getting-started-with-redux
 - https://www.youtube.com/watch?v=xsSnOQynTHs
+- https://github.com/erikras/ducks-modular-redux
 
 ## ES6 (ES2015)
 
@@ -86,13 +87,13 @@ ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a
 - http://babeljs.io/docs/learn-es2015/
 - https://babeljs.io/ - transpiler
 
-## React Router (Advanced)
+## React Router
 
 React Router is a package used by most React Single Page Apps. It's easy to use and written in JSX syntax.
 
 - https://github.com/rackt/react-router
 
-## Webpack (Advanced)
+## Webpack
 
 Webpack is a very complicated but useful bundler. It allows for things like hot reloading, `import`, `export`, etc. Webpack is set up by a single `webpack.config.js` file/
 
