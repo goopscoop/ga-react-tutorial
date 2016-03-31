@@ -87,11 +87,35 @@ ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a
 - http://babeljs.io/docs/learn-es2015/
 - https://babeljs.io/ - transpiler
 
-## React Router
+## React Router (may not cover in class)
 
 React Router is a package used by most React Single Page Apps. It's easy to use and written in JSX syntax.
 
 - https://github.com/rackt/react-router
+
+Here's an example of how you would set up routes with the completed app we build in the workshop:
+
+```javascript
+import { Router, Route, hashHistory } from 'react-router'
+
+
+const store = configureStore();
+
+class App extends React.Component {
+  render(){
+    return(
+      <Provider store={store}>
+        <Router history={hashHistory}>
+          <Route path="/" component={ToDoApp}/>
+          <Route path="/foo" component={Bar}/>
+        </Router>
+      </Provider>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
+```
 
 ## Webpack
 
