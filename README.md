@@ -29,6 +29,7 @@ If you've already installed node, you can skip this step.
 # Continued Ed Links
 
 ## React
+- https://github.com/facebook/react/wiki/Sites-Using-React
 - https://facebook.github.io/react/docs/thinking-in-react.html
 - https://egghead.io/technologies/react
 - https://github.com/reactjs/react-basic
@@ -79,6 +80,7 @@ Learn more about Redux
 - https://egghead.io/series/getting-started-with-redux
 - https://www.youtube.com/watch?v=xsSnOQynTHs
 - https://github.com/erikras/ducks-modular-redux
+- Ducks - https://github.com/erikras/ducks-modular-redux
 
 ## ES6 (ES2015)
 
@@ -122,3 +124,9 @@ ReactDOM.render(<App />, document.getElementById('app'));
 Webpack is a very complicated but useful bundler. It allows for things like hot reloading, `import`, `export`, etc. Webpack is set up by a single `webpack.config.js` file/
 
 - https://webpack.github.io/
+
+## Other
+
+- Fetch - https://github.com/github/fetch
+- Test w/ Unexpected - http://unexpected.js.org/
+- Test w/ Webpack, Karma & Expect - https://medium.com/@scbarrus/how-to-get-test-coverage-on-react-with-karma-babel-and-webpack-c9273d805063#.uvl9e6hm4
