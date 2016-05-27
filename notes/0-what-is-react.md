@@ -1,3 +1,16 @@
+
+# Welcome to React!!!
+
+## Teacher: Cody Barrus
+
+- Twitter: @SCBarrus
+- Medium: @SCBarrus
+- Github: goopscoop
+
+Before class, go here: https://github.com/goopscoop/ga-react-tutorial
+
+---
+
 # React
 ## What is it?
 
