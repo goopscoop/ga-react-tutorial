@@ -25,6 +25,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
+    "css-loader": "^0.23.1",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
@@ -32,7 +33,6 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.19",
-    "flummox": "^3.6.7",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
     "react-redux": "^4.4.1",
