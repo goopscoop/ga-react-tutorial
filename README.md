@@ -84,7 +84,7 @@ Learn more about Redux
 
 ## ES6 (ES2015)
 
-ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a lot of handy new features. Some of my favorites include new variable types (`let` and `const`), arrow functions `() => {}`, spread opperators `{...props}`, destructuring `cosnt {thing1, thing2, thing3} = object`, and a bunch of other useful features. Well worth looking into.
+ES6 aka ES2015 is the newest itteration of JavaScript that comes packaged with a lot of handy new features. Some of my favorites include new variable types (`let` and `const`), arrow functions `() => {}`, spread opperators `{...props}`, destructuring `const {thing1, thing2, thing3} = object`, and a bunch of other useful features. Well worth looking into.
 
 - http://babeljs.io/docs/learn-es2015/
 - https://babeljs.io/ - transpiler
