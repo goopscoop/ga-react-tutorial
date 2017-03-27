@@ -62,7 +62,7 @@ React.createElement('h1', {className: "heading"},
 
 ## Flux (old) and Redux (new) - (Advanced Data Handling)
 
-###Flux
+### Flux
 
 Flux is a data handling methodology created by Facebook for React. One of the best implementations of Flux come in the form of Flummox. However, the React community is starting to move away from Flux towards a new data handling methodology called Redux.
 
