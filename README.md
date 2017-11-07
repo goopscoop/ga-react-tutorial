@@ -1,7 +1,7 @@
 # Setup (Before Class)
 
 ## Make sure you have the following tools:
-- A Mac computer (Linix and Windows welcome, but I'll be able to offer very limited support if any issues pop up, especially with Windows)
+- A Mac computer (Linux and Windows welcome, but I'll be able to offer very limited support if any issues pop up, especially with Windows)
 - An IDE (Sublime, Atom, VIM or something similar)
 - Google Chrome or FireFox
 - Node.js installed
